@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(232, 103, 56);
+    background: linear-gradient(0deg, rgba(232, 103, 56, 1) 0%, rgba(216, 91, 97, 1) 18%, rgba(160, 51, 237, 0.6699929971988796) 98%);
+    height: 100vw;
+    text-align: center;
+    color: #fff;
+}
+
+h1 {
+    margin: 1rem 0;
+}
+
+form {
+    background-color: #fff;
+    color: #333;
+    max-width: 400px;
+    margin: 1rem auto;
+    padding: 0.6rem 1.2rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+form div {
+    display: flex;
+    align-items: center;
+    margin: .5rem;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+form div input[type="number"] {
+    width: 60px;
+    padding: 0.6rem;
+    margin-left: .5rem;
+    text-align: center;
+    font-size: 16px;
+}
+
+form input[type="submit"] {
+    width: 150px;
+    padding: 0.6rem 1.2rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: .5rem;
+    margin: 1rem 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#resultado {
+    background-color: #fff;
+    color: #333;
+    max-width: 400px;
+    margin: 1rem auto;
+    padding: 0.6rem 1.2rem;
+    border-radius: 1rem;
+    display: none;
+}
+
+#resultado p {
+    margin: .5rem 0;
+}
