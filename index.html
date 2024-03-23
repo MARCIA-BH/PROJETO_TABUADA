@@ -11,22 +11,22 @@
 
 <body>
     <h1>Digite o número e confirme para gerar uma tabuada</h1>
-
+    
     <form>
         <div>
-            <label for="numero">Tabuada do:</label>
-            <input type="number" id="numero" name="numero" placeholder="3">
+            <label for="numeroMultiplicador">Tabuada do:</label>
+            <input type="number" name="numeroMultiplicador" id="numeroMultiplicador" step="1" min="0" placeholder="3">
         </div>
         <div>
-            <label for="multiplicador">Multiplicar até:</label>
-            <input type="number" id="multiplicador" name="multiplicador" placeholder="10">
+            <label for="repetirMultiplicador">Multiplicar até:</label>
+            <input type="number" name="repetirMultiplicador" id="repetirMultiplicador" step="1" min="0" placeholder="10">
         </div>
-        <input type="submit" id="calcular">
+        <input type="submit" value="Calcular">
     </form>
 
-    <h2 id="titulo-resultado">Tabuada do número: <span></span></h2>
+    <h2>Tabuada do número: <span></span></h2>
 
-    <div id="resultado"></div>
+    <div class="quadro-resultado"></div>
 </body>
 
 </html>

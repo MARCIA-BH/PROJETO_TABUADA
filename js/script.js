@@ -1,29 +1,45 @@
-//referencia
-const formularioTabuada = document.querySelector("form");
-const numero = document.querySelector("#numero");
-const multiplicador = document.querySelector("#multiplicador");
-const quadroResultado = document.querySelector("#resultado");
-const tituloQuadroResultado = document.querySelector("#titulo-resultado span");
+//referência 
+const form = document.querySelector("form");
+const numeroMultiplicador = document.querySelector("#numeroMultiplicador");
+const repetirMultiplicador = document.querySelector("#repetirMultiplicador");
+const quadroResultado = document.querySelector(".quadro-resultado");
+const adicionarNumeroMultiplicador = document.querySelector("h2 span");
 
-//funcao
-function calcularTabuada(numeroTabuada, numeroMultiplicador) {
-    for (let i = 0; i <= numeroMultiplicador; i++) {
-        quadroResultado.innerHTML += `<p>${numeroTabuada} x ${i} = ${i * numeroTabuada}</p>`;
+//fução
+const criarTabuada = (numero, multiplicadorNumero) => {
+
+    for(let i = 0; i <= multiplicadorNumero; i++) {
+        const resultado = i * numero;
+
+        const template = `<div class="linha">
+            <div class="operacao">${numero} x ${i} = </div>
+            <div class="resultado">${resultado}</div>
+        </div>`;
+
+        const parser = new DOMParser();
+
+        const htmlTemplate = parser.parseFromString(template, "text/html");
+
+        const linha = htmlTemplate.querySelector(".linha");
+
+        quadroResultado.appendChild(linha);
     }
 
-    tituloQuadroResultado.innerText = numeroTabuada;
     quadroResultado.style.display = "block";
+    adicionarNumeroMultiplicador.innerText = numero;
 }
 
+
 //evento
-formularioTabuada.addEventListener("submit", (e) => {
-    e.preventDefault();
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-    const numeroTabuada = +numero.value;
-    const numeroMultiplicador = +multiplicador.value;
+    // adicionar valores do input em uma variável
+    const multiplicador = numeroMultiplicador.value;
+    const repetir = repetirMultiplicador.value;
 
-    //validacao
-    if (!numeroTabuada || !numeroMultiplicador) return;
+    //validação
+    if(!multiplicador || !repetir) return;
 
-    calcularTabuada(numeroTabuada, numeroMultiplicador);
+    criarTabuada(multiplicador, repetir);
 })
